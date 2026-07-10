@@ -1,13 +1,12 @@
 on: push
 
 jobs:
-  build-node:
+  build-php:
     runs-on: ubuntu-latest
-    container: node:16
+    container: php:8.2-cli
 
     steps:
       - run: echo "TESTING"
-      - run: node --version
-      - run: npm --version
+      - run: php --version
       - uses: actions/checkout@v3
-      - run: node app.js
+      - run: php app.php
